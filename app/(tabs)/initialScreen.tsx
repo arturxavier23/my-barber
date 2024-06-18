@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ThemedText } from '@/components/ThemedText';
 
@@ -13,7 +13,7 @@ export default function initialScreen() {
     
       const navigateToLocalization = () => {
         //@ts-ignore
-        navigation.navigate('LocalizationScreen');
+        navigation.navigate('localizationScreen');
       };
 
       return (
@@ -29,7 +29,7 @@ export default function initialScreen() {
 
             <ThemedText type="title" lightColor='black'>Serviços</ThemedText>
 
-            <TouchableOpacity onPress={navigateToServices}>
+            <TouchableOpacity onPress={navigateToLocalization}>
                 <Image
                 source={require('@/assets/images/location-icon.png')}
                 style={styles.image}
