@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Image } from 'react-native';
+import { ThemedText } from '@/components/ThemedText';
 import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
@@ -9,24 +10,20 @@ export default function LoginScreen() {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   useEffect(() => {
-    setEmail('Digite seu email');
-    setPassword('Digite sua senha');
+    setEmail('');
+    setPassword('');
   }, []);
 
   const handleLogin = () => {
     //@ts-ignore
-    navigation.navigate('HomePage');
-  };
-
-  const handleRegister = () => {
-     //@ts-ignore
-    navigation.navigate('Cadastro');
+    navigation.navigate('initialScreen');
   };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.gradientBackground}>
-        <Text style={styles.title}>My Barber</Text>
+      <ThemedText type="title">My Barber</ThemedText>
+        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
 
         <TextInput
           style={styles.input}
@@ -34,7 +31,7 @@ export default function LoginScreen() {
           value={email}
           onChangeText={setEmail}
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="Senha"
@@ -42,22 +39,16 @@ export default function LoginScreen() {
           onChangeText={setPassword}
           secureTextEntry={!passwordVisible}
         />
-        
+
         <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
           <Text style={styles.togglePassword}>
             {passwordVisible ? 'Ocultar senha' : 'Mostrar senha'}
           </Text>
         </TouchableOpacity>
 
-        <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
-
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button} onPress={handleRegister}>
-            <Text style={styles.buttonText}>Cadastrar</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -74,20 +65,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'linear-gradient(#e66465, #9198e5)', // background cor
-  },
-  title: {
-    fontFamily: 'Arial',
-    color: 'black',
-    fontSize: 40,
-    textAlign: 'center',
-    marginBottom: 40,
+    backgroundColor: 'linear-gradient(to right, #e66465, #9198e5)',
   },
   input: {
     width: '90%',
     padding: 10,
     marginBottom: 20,
-    borderColor: 'blue', 
+    borderColor: 'black', 
     borderWidth: 2,
     borderRadius: 24,
     fontSize: 20,
@@ -105,11 +89,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     width: '90%',
   },
   button: {
-    backgroundColor: 'blue', 
+    backgroundColor: 'black', 
     padding: 10,
     borderRadius: 24,
     width: '45%',
@@ -118,6 +102,5 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontSize: 16,
-    fontFamily: 'Arial',
   },
 });
