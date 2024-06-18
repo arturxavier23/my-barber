@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    backgroundColor: 'linear-gradient(0deg, #color1 0%, #color2 100%)', // Replace with actual colors
+    backgroundColor: 'linear-gradient(#e66465, #9198e5)', // background cor
   },
   title: {
-    fontFamily: 'Oswald',
-    color: '#infoColor', // Replace with actual color
+    fontFamily: 'Arial',
+    color: 'black',
     fontSize: 40,
     textAlign: 'center',
     marginBottom: 40,
@@ -87,18 +87,18 @@ const styles = StyleSheet.create({
     width: '90%',
     padding: 10,
     marginBottom: 20,
-    borderColor: '#secondaryBackground', 
+    borderColor: 'blue', 
     borderWidth: 2,
     borderRadius: 24,
     fontSize: 20,
     color: '#a5a5a5', 
   },
   togglePassword: {
-    color: '#infoColor', 
+    color: 'black', 
     marginBottom: 20,
   },
   forgotPassword: {
-    color: '#infoColor', 
+    color: 'black', 
     marginBottom: 40,
     alignSelf: 'flex-end',
     marginRight: '10%',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   button: {
-    backgroundColor: '#successColor', 
+    backgroundColor: 'blue', 
     padding: 10,
     borderRadius: 24,
     width: '45%',
@@ -118,6 +118,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontSize: 16,
-    fontFamily: 'Readex Pro',
+    fontFamily: 'Arial',
   },
 });
