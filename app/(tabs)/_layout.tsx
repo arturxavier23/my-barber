@@ -14,6 +14,7 @@ export default function TabLayout() {
       <Stack.Screen name='initialScreen' options={{ title: 'Home', headerTitleAlign: 'center'}}/>
       <Stack.Screen name='servicesScreen' options={{ title: 'Serviços', headerTitleAlign: 'center'}}/>
       <Stack.Screen name='localizationScreen' options={{ title: 'Localização', headerTitleAlign: 'center'}}/>
+      <Stack.Screen name='datailedServiceScreen' options={{ title: 'Serviço', headerTitleAlign: 'center'}}/>
     </Stack>
   );
 }

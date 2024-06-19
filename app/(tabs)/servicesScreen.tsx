@@ -6,16 +6,16 @@ import { ThemedText } from '@/components/ThemedText';
 export default function servicesScreen() {
     const navigation = useNavigation();
 
-    const navigateToChoicedService = () => {
+    const navigateToChoicedService = (servico: string) => {
         //@ts-ignore
-        navigation.navigate('serviceScreen');
+        navigation.navigate('datailedServiceScreen', { servico });
       };
 
       return (
         <ScrollView contentContainerStyle={styles.container}>
              <View style={styles.body}>     
 
-            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+            <TouchableOpacity style={styles.itemContainer} onPress={ () => navigateToChoicedService('Corte de cabelo')}>
                 <Image
                     source={require('@/assets/images/img1.jpg')}
                     style={styles.image}
@@ -24,7 +24,7 @@ export default function servicesScreen() {
             </TouchableOpacity>
 
 
-            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+            <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Barba e bigode')}>
                 <Image
                     source={require('@/assets/images/img2.jpg')}
                     style={styles.image}
@@ -32,7 +32,7 @@ export default function servicesScreen() {
                 <ThemedText type="title" lightColor='black'>Barba e bigode</ThemedText>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+            <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Lavagem')}>
                 <Image
                     source={require('@/assets/images/img3.jpg')}
                     style={styles.image}
@@ -40,7 +40,7 @@ export default function servicesScreen() {
                 <ThemedText type="title" lightColor='black'>Lavagem</ThemedText>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+            <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Hidratação')}>
                 <Image
                     source={require('@/assets/images/img4.jpg')}
                     style={styles.image}
