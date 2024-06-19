@@ -24,14 +24,12 @@ export default function LoginScreen() {
       <View style={styles.gradientBackground}>
       <ThemedText type="title">My Barber</ThemedText>
         <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-
         <TextInput
           style={styles.input}
           placeholder="Email"
           value={email}
           onChangeText={setEmail}
         />
-
         <TextInput
           style={styles.input}
           placeholder="Senha"
@@ -39,13 +37,11 @@ export default function LoginScreen() {
           onChangeText={setPassword}
           secureTextEntry={!passwordVisible}
         />
-
         <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
           <Text style={styles.togglePassword}>
             {passwordVisible ? 'Ocultar senha' : 'Mostrar senha'}
           </Text>
         </TouchableOpacity>
-
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={handleLogin}>
             <Text style={styles.buttonText}>Login</Text>

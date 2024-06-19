@@ -5,8 +5,6 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { useNavigation } from '@react-navigation/native';
 
 export default function datailedServiceScreen() {
-
-
     const navigation = useNavigation();
     const { servico } = useLocalSearchParams();
 
@@ -29,7 +27,6 @@ export default function datailedServiceScreen() {
 
       //@ts-ignore
       const value = getServiceValue(servico);
-
       const [date, setDate] = useState(new Date());
       const [show, setShow] = useState(false);
     
@@ -53,7 +50,6 @@ export default function datailedServiceScreen() {
       <Text style={styles.title}>Serviço Selecionado</Text>
       <Text style={styles.service}>{servico}</Text>
       <Text style={styles.value}>Valor: R$ {value}</Text>
-
         <View style={styles.dateContainer}>
         <Button onPress={showDatePicker} title="Selecionar Data" />
         {show && (
@@ -67,9 +63,7 @@ export default function datailedServiceScreen() {
         )}
         <Text style={styles.dateText}>Data Selecionada: {date.toLocaleDateString()}</Text>
       </View>
-
       <Button onPress={handleSchedule} title="Agendar" />
-
     </View>
   );
 }

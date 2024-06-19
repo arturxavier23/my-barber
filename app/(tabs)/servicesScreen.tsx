@@ -14,7 +14,6 @@ export default function servicesScreen() {
       return (
         <ScrollView contentContainerStyle={styles.container}>
              <View style={styles.body}>     
-
             <TouchableOpacity style={styles.itemContainer} onPress={ () => navigateToChoicedService('Corte de cabelo')}>
                 <Image
                     source={require('@/assets/images/img1.jpg')}
@@ -22,8 +21,6 @@ export default function servicesScreen() {
                     />
                 <ThemedText type="title" lightColor='black'>Corte de cabelo</ThemedText>
             </TouchableOpacity>
-
-
             <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Barba e bigode')}>
                 <Image
                     source={require('@/assets/images/img2.jpg')}
@@ -31,7 +28,6 @@ export default function servicesScreen() {
                     />
                 <ThemedText type="title" lightColor='black'>Barba e bigode</ThemedText>
             </TouchableOpacity>
-
             <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Lavagem')}>
                 <Image
                     source={require('@/assets/images/img3.jpg')}
@@ -39,7 +35,6 @@ export default function servicesScreen() {
                     />
                 <ThemedText type="title" lightColor='black'>Lavagem</ThemedText>
             </TouchableOpacity>
-
             <TouchableOpacity style={styles.itemContainer} onPress={() => navigateToChoicedService('Hidratação')}>
                 <Image
                     source={require('@/assets/images/img4.jpg')}
@@ -47,9 +42,7 @@ export default function servicesScreen() {
                     />
                 <ThemedText type="title" lightColor='black'>Hidratação</ThemedText>
             </TouchableOpacity>
-
           </View>
-
         </ScrollView>
       );
     }

@@ -17,18 +17,15 @@ export default function initialScreen() {
       };
 
       return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView>
              <View style={styles.body}>
-        
             <TouchableOpacity onPress={navigateToServices}>
                 <Image
                 source={require('@/assets/images/services-icon.png')}
                 style={styles.image}
                 />
             </TouchableOpacity>
-
             <ThemedText type="title" lightColor='black'>Serviços</ThemedText>
-
             <TouchableOpacity onPress={navigateToLocalization}>
                 <Image
                 source={require('@/assets/images/location-icon.png')}
@@ -36,17 +33,12 @@ export default function initialScreen() {
                 />
             </TouchableOpacity>
             <ThemedText type="title" lightColor='black'>Localização</ThemedText>
-
           </View>
-
         </ScrollView>
       );
     }
     
     const styles = StyleSheet.create({
-      container: {
-   
-      },
       header: {
         height: 75,
         justifyContent: 'center',
