@@ -1,39 +1,52 @@
 import React from 'react';
-import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { View, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { ThemedText } from '@/components/ThemedText';
 
 export default function servicesScreen() {
     const navigation = useNavigation();
 
+    const navigateToChoicedService = () => {
+        //@ts-ignore
+        navigation.navigate('serviceScreen');
+      };
+
       return (
         <ScrollView contentContainerStyle={styles.container}>
              <View style={styles.body}>     
 
+            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+                <Image
+                    source={require('@/assets/images/img1.jpg')}
+                    style={styles.image}
+                    />
+                <ThemedText type="title" lightColor='black'>Corte de cabelo</ThemedText>
+            </TouchableOpacity>
 
-            <Image
-                source={require('@/assets/images/img1.jpg')}
-                style={styles.image}
-                />
-            <ThemedText type="title" lightColor='black'>Corte de cabelo</ThemedText>
 
-            <Image
-                source={require('@/assets/images/img2.jpg')}
-                style={styles.image}
-                />
-            <ThemedText type="title" lightColor='black'>Barba e bigode</ThemedText>
+            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+                <Image
+                    source={require('@/assets/images/img2.jpg')}
+                    style={styles.image}
+                    />
+                <ThemedText type="title" lightColor='black'>Barba e bigode</ThemedText>
+            </TouchableOpacity>
 
-            <Image
-                source={require('@/assets/images/img3.jpg')}
-                style={styles.image}
-                />
-            <ThemedText type="title" lightColor='black'>Lavagem</ThemedText>
+            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+                <Image
+                    source={require('@/assets/images/img3.jpg')}
+                    style={styles.image}
+                    />
+                <ThemedText type="title" lightColor='black'>Lavagem</ThemedText>
+            </TouchableOpacity>
 
-            <Image
-                source={require('@/assets/images/img4.jpg')}
-                style={styles.image}
-                />
-            <ThemedText type="title" lightColor='black'>Hidratação</ThemedText>
+            <TouchableOpacity style={styles.itemContainer} onPress={navigateToChoicedService}>
+                <Image
+                    source={require('@/assets/images/img4.jpg')}
+                    style={styles.image}
+                    />
+                <ThemedText type="title" lightColor='black'>Hidratação</ThemedText>
+            </TouchableOpacity>
 
           </View>
 
@@ -43,21 +56,25 @@ export default function servicesScreen() {
     
     const styles = StyleSheet.create({
       container: {
-   
-      },
-      header: {
-        height: 75,
+        flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'black',
       },
+      itemContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: 10,
+        width: '80%',
+        justifyContent: 'center',
+    },
       image: {
         width: 100,
         height: 100,
+        borderRadius: 50,
+        marginRight: 20,
       },
       body: {
-        height: 700,
-        justifyContent: 'center',
+        width: '100%',
         alignItems: 'center',
       }
     });
